@@ -59,7 +59,7 @@ clean_up() {
     if [ ! -f .testing ]; then
         echo "Deleting self"
         rm -f setup.sh
-        rm -f notes.md
+        rm -f README.md
     fi
 }
 
