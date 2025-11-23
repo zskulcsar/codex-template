@@ -50,14 +50,17 @@ add_to_git() {
     echo "Adding codex files to the repo"
     git add --force .codex/skills/*
     git add --force .codex/config.toml
-    git commit -m "Placing codex files under version control."
+    git add .gitignore
+    git commit -m "Placing project files under version control."
 }
 
 clean_up() {
     # Removing leftovers (this is a one-shot command)
-    echo "Deleting self"
-    echo "rm -f setup.sh"
-    echo "rm -f notes.md"
+    if [ ! -f .testing ]; then
+        echo "Deleting self"
+        rm -f setup.sh
+        rm -f notes.md
+    fi
 }
 
 # *** Main
