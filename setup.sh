@@ -47,10 +47,13 @@ GI
 # TODO: check for git repository first
 add_to_git() {
     # Making sure everything is under git that needs to be under git
-    echo "Adding codex files to the repo"
+    echo "Adding project files to the repo"
     git add --force .codex/skills/*
     git add --force .codex/config.toml
     git add .gitignore
+    echo "Cleaning up"
+    git add setup.sh
+    git add README.md
     git commit -m "Placing project files under version control."
 }
 
